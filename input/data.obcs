@@ -1,0 +1,65 @@
+# ***************
+# Open boundaries
+# ***************
+ &OBCS_PARM01
+ OB_Jsouth =   512*1,
+ OB_Jnorth =   512*-1,
+ OB_Ieast  =   512*-1,
+ OB_Iwest  =   512*1,
+# This flag check and equalise topography across open boundaries:
+#OBCSfixTopo = .TRUE.,
+ useOBCSprescribe=.TRUE.,
+# OBCSbalanceSurf=.TRUE.,
+ useOBCSbalance = .TRUE.,
+ OBCS_balanceFacN=0.4,
+ OBCS_balanceFacS=0,
+ OBCS_balanceFacE=1,
+ OBCS_balanceFacW=0,
+#- use 1rst Order upwind for outflow only:
+ OBCS_u1_adv_T = 1,
+ OBCS_u1_adv_S = 1,
+#
+ OBNsFile='vosaline_1995_2018_N.bin',
+ OBNtFile='votemper_1995_2018_N.bin',
+ OBNvFile='vomecrtn_1995_2018_N_bal.bin',
+# OBNuFile='vozocrte_1995_2014_N.bin',
+ OBNhFile='iicethic_1995_2018_N.bin',
+ OBNaFile='ileadfra_1995_2018_N.bin',
+#
+ OBSsFile='vosaline_1995_2018_S.bin',
+ OBStFile='votemper_1995_2018_S.bin',
+ OBSvFile='vomecrtn_1995_2018_S_bal.bin',
+# OBSuFile='vozocrte_1995_2014_S.bin',
+ OBShFile='iicethic_1995_2018_S.bin',
+ OBSaFile='ileadfra_1995_2018_S.bin',
+#
+ OBEsFile='vosaline_1995_2018_E.bin',
+ OBEtFile='votemper_1995_2018_E.bin',
+# OBEvFile='vomecrtn_1995_2014_E.bin',
+ OBEuFile='vozocrte_1995_2018_E_bal.bin',
+ OBEhFile='iicethic_1995_2018_E.bin',
+ OBEaFile='ileadfra_1995_2018_E.bin',
+#
+ OBWsFile='vosaline_1995_2018_W.bin',
+ OBWtFile='votemper_1995_2018_W.bin',
+# OBWvFile='vomecrtn_1995_2014_W.bin',
+ OBWuFile='vozocrte_1995_2018_W_bal.bin',
+ OBWhFile='iicethic_1995_2018_W.bin',
+ OBWaFile='ileadfra_1995_2018_W.bin',
+
+# when "#define ALLOW_OBCS_TIDES" in OBCS_OPTIONS.h
+
+ useOBCStides = .TRUE.,
+#components   = M2       S2     N2       K2       K1      O1       P1       Q1       Mf         Mm
+#periods (hr) = 12.4206  12     12.6583  11.9672  23.9345 25.8193  24.0659  26.8684  327.8599   661.31
+ tidalPeriod  = 44714.16,43200.,45569.88,43081.92,86164.2,92949.48,86637.24,96726.24,1180295.64,2380716.
+#
+ OBNamFile='OB_northern_amp_v',
+ OBEamFile='OB_eastern_amp_u',
+ OBSamFile='OB_southern_amp_v',
+ OBWamFile='OB_western_amp_u',
+ OBNphFile='OB_northern_pha_v',
+ OBEphFile='OB_eastern_pha_u',
+ OBSphFile='OB_southern_pha_v',
+ OBWphFile='OB_western_pha_u',
+ &

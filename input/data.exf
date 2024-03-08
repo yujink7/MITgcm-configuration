@@ -1,0 +1,149 @@
+# *********************
+# External Forcing Data
+# *********************
+#
+ &EXF_NML_01
+ exf_albedo        = 0.15,
+ exf_scal_BulkCdn  = 1.015,
+ exf_iprec         = 32,
+ useExfYearlyFields= .TRUE.,
+ useExfCheckRange  = .FALSE.,
+ useRelativeWind   = .TRUE.,
+ &
+#
+ &EXF_NML_02
+#apressurefile     = 'EOG_pres_tide',
+ aqhfile           = 'aqh_era5',
+ atempfile         = 't2m_era5',
+ uwindfile         = 'u10_era5',
+ vwindfile         = 'v10_era5',
+ precipfile        = 'precip_era5',
+ swdownfile        = 'dsw_era5',
+ lwdownfile        = 'dlw_era5',
+ runofffile        = 'jra55_dailyrunoff_512_512',
+ climsssfile       = 'WOA04_SSS_12x512x512',
+
+#
+#apressurestartdate1 = 19950101,
+#apressurestartdate2 = 000000,
+#apressureperiod     = 3600.0,
+ aqhstartdate1       = 19950101,
+ aqhstartdate2       = 000000,
+ aqhperiod           = 3600.0,
+ atempstartdate1     = 19950101,
+ atempstartdate2     = 000000,
+ atempperiod         = 3600.0,
+ uwindstartdate1     = 19950101,
+ uwindstartdate2     = 000000,
+ uwindperiod         = 3600.0,
+ vwindstartdate1     = 19950101,
+ vwindstartdate2     = 000000,
+ vwindperiod         = 3600.0,
+ precipstartdate1    = 19950101,
+ precipstartdate2    = 000000,
+ precipperiod        = 3600.0,
+ swdownstartdate1    = 19950101,
+ swdownstartdate2    = 000000,
+ swdownperiod        = 3600.0,
+ lwdownstartdate1    = 19950101,
+ lwdownstartdate2    = 000000,
+ lwdownperiod        = 3600.0,
+ runoffstartdate1    = 19950101,
+ runoffstartdate2    = 000000,
+ runoffperiod        = 86400.0,
+
+ climsssstartdate1   = 19950115,
+ climsssstartdate2   = 120000,
+ climsssperiod       = -12,
+ climsssTauRelax     = 2629800.,
+ 
+ 
+# "*period=-12" specifies monthly-mean forcing
+#runoffperiod      = -12,
+ &
+#
+ &EXF_NML_03
+# exf_offset_atemp  = 273.15,  # necessary when the unit is degC
+#exf_inscal_runoff = 3.1710e-08,
+#exf_inscal_runoff = 1.00e-03,
+ &
+#
+ &EXF_NML_04
+ precip_lon0       = 116.0D0,
+ precip_lon_inc    = 0.25D0,
+ precip_lat0       = 19.0D0,
+ precip_lat_inc    = 143*0.25,
+ precip_nlon       = 179,
+ precip_nlat       = 144,
+#
+ atemp_lon0       = 116.0D0,
+ atemp_lon_inc    = 0.25D0,
+ atemp_lat0       = 19.0D0,
+ atemp_lat_inc    = 143*0.25,
+ atemp_nlon       = 179,
+ atemp_nlat       = 144,
+#
+ aqh_lon0       = 116.0D0,
+ aqh_lon_inc    = 0.25D0,
+ aqh_lat0       = 19.0D0,
+ aqh_lat_inc    = 143*0.25,
+ aqh_nlon       = 179,
+ aqh_nlat       = 144,
+#
+ swdown_lon0       = 116.0D0,
+ swdown_lon_inc    = 0.25D0,
+ swdown_lat0       = 19.0D0,
+ swdown_lat_inc    = 143*0.25,
+ swdown_nlon       = 179,
+ swdown_nlat       = 144,
+#
+ lwdown_lon0       = 116.0D0,
+ lwdown_lon_inc    = 0.25D0,
+ lwdown_lat0       = 19.0D0,
+ lwdown_lat_inc    = 143*0.25,
+ lwdown_nlon       = 179,
+ lwdown_nlat       = 144,
+#
+ uwind_lon0       = 116.0D0,
+ uwind_lon_inc    = 0.25D0,
+ uwind_lat0       = 19.0D0,
+ uwind_lat_inc    = 143*0.25,
+ uwind_nlon       = 179,
+ uwind_nlat       = 144,
+#
+ vwind_lon0       = 116.0D0,
+ vwind_lon_inc    = 0.25D0,
+ vwind_lat0       = 19.0D0,
+ vwind_lat_inc    = 143*0.25,
+ vwind_nlon       = 179,
+ vwind_nlat       = 144,
+#
+# runoff_lon0       = 0.125D0,
+# runoff_lon_inc    = 0.25D0,
+# runoff_lat0       = -89.875D0,
+# runoff_lat_inc    = 719*0.25,
+# runoff_nlon       = 512,
+# runoff_nlat       = 512,
+ runoff_interpmethod = 0,
+ climsss_interpmethod = 0,
+ &
+
+#-- OBCS :
+ &EXF_NML_OBCS
+ obcsSstartdate1   = 19950115,
+ obcsSstartdate2   = 000000,
+ obcsSperiod       = 2628000.0,
+#
+ obcsNstartdate1   = 19950115,
+ obcsNstartdate2   = 000000,
+ obcsNperiod       = 2628000.0,
+#
+ obcsWstartdate1   = 19950115,
+ obcsWstartdate2   = 000000,
+ obcsWperiod       = 2628000.0,
+#
+ obcsEstartdate1   = 19950115,
+ obcsEstartdate2   = 000000,
+ obcsEperiod       = 2628000.0,
+#
+ &

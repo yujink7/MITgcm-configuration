@@ -1,0 +1,400 @@
+# Diagnostic Package Choices
+ &diagnostics_list
+#
+   frequency(1) = 2628000.,
+   fields(1:13,1) = 'ETAN    ','ETANSQ  ','DETADT2 ',
+                  'oceTAUX ','oceTAUY ','oceQsw  ','oceQnet ','oceFWflx','oceSflux',
+                  'TFLUX   ','SFLUX   ','surForcS','SRELAX  ',
+   filename(1) = 'Diags/state_2d',
+
+   frequency(2) = 2628000.,
+   fields(1:2,2) = 'UVELMASS','VVELMASS',
+   filename(2) = 'Diags/VELMASS',
+ 
+   frequency(3) = 2628000.,
+   fields(1:2,3) = 'SIarea  ','SIheff  ',
+   filename(3) = 'Diags/SIstate',
+
+   frequency(4) = 2628000.,
+   fields(1,4) = 'WVELMASS',
+   filename(4) = 'Diags/WVELMASS',
+
+#   frequency(5) =  86400.,
+#   filename(5) = 'movie_diags/movie_diags',
+#   fields(1:5,5) = 'UVELMASS', 'VVELMASS', 'THETA   ', 'SALT    ', 'ETAN    ',
+#   levels(1,5) = 1.,
+
+#   frequency(6) = 26280000.,
+#   fields(1,6) = 'GC_Tr01 '
+#   filename(6) = 'Diags/GCPTR1',
+
+   frequency(7) = 2628000.,
+   fields(1:3,7) = 'THETA   ','SALT    ','DRHODR  ',
+   filename(7) = 'Diags/THETA',
+
+   fields(1:3,8) = 'TOTSTEND','WSLTMASS','KPPg_SLT',
+   fileName(8) = 'Diags/Stend',
+   frequency(8) = 2628000.,
+   timePhase(8) = 0.0,
+
+   fields(1:3,9) = 'ADVx_SLT','ADVy_SLT','ADVr_SLT',
+   fileName(9) = 'Diags/Sadv',
+   frequency(9) = 2628000.,
+
+#   frequency(9) = 26280000.,
+#   fields(1,9) = 'TRAC01  ',
+#   filename(9) = 'Diags/PTR1',
+
+#   frequency(10) = 26280000.,
+#   fields(1,10) = 'TRAC02  ',
+#   filename(10) = 'Diags/PTR2',
+
+#   frequency(11) = 26280000.,
+#   fields(1,11) = 'TRAC03  ',
+#   filename(11) = 'Diags/PTR3',
+
+   fields(1:1,12) = 'LaHc1RHO',
+   fileName(12) = 'Diags/LaHc1RHO',
+   frequency(12) = 2628000.,
+   timePhase(12) = 0.0,
+
+   fields(1:1,13) = 'LaTs1RHO',
+   fileName(13) = 'Diags/LaTs1RHO',
+   frequency(13) = 2628000.,
+   timePhase(13) = 0.0,
+
+   fields(1:1,14) = 'LaSs1RHO',
+   fileName(14) = 'Diags/LaSs1RHO',
+   frequency(14) = 2628000.,
+   timePhase(14) = 0.0,
+
+   fields(1:1, 15) = 'LTha1RHO',
+   fileName(15) = 'Diags/LTha1RHO',
+   frequency(15) = 2628000.,
+   timePhase(15) = 0.0,
+
+   fields(1:1, 16) = 'LSha1RHO',
+   fileName(16) = 'Diags/LSha1RHO',
+   frequency(16) = 2628000.,
+   timePhase(16) = 0.0,
+
+   fields(1:1, 17) = 'LTza1RHO',
+   fileName(17) = 'Diags/LTza1RHO',
+   frequency(17) = 2628000.,
+   timePhase(17) = 0.0,
+
+   fields(1:1, 18) = 'LSza1RHO',
+   fileName(18) = 'Diags/LSza1RHO',
+   frequency(18) = 2628000.,
+   timePhase(18) = 0.0,
+
+   fields(1:1, 19) = 'LaTz1RHO',
+   fileName(19) = 'Diags/LaTz1RHO',
+   frequency(19) = 2628000.,
+   timePhase(19) = 0.0,
+
+   fields(1:1, 20) = 'LaSz1RHO',
+   fileName(20) = 'Diags/LaSz1RHO',
+   frequency(20) = 2628000.,
+   timePhase(20) = 0.0,
+
+   fields(1:1, 21) = 'LTto1RHO',
+   fileName(21) = 'Diags/LTto1RHO',
+   frequency(21) = 2628000.,
+   timePhase(21) = 0.0,
+
+   fields(1:1, 22) = 'LSto1RHO',
+   fileName(22) = 'Diags/LSto1RHO',
+   frequency(22) = 2628000.,
+   timePhase(22) = 0.0,
+
+   fields(1:1, 23) = 'LaUH1RHO',
+   fileName(23) = 'Diags/LaUH1RHO',
+   frequency(23) = 2628000.,
+   timePhase(23) = 0.0,
+
+   fields(1:1, 24) = 'LaVH1RHO',
+   fileName(24) = 'Diags/LaVH1RHO',
+   frequency(24) = 2628000.,
+   timePhase(24) = 0.0,
+
+   fields(1:1, 25) = 'LaHs1RHO',
+   fileName(25) = 'Diags/LaHs1RHO',
+   frequency(25) = 2628000.,
+   timePhase(25) = 0.0,
+
+   fields(1:1, 26) = 'LaHw1RHO',
+   fileName(26) = 'Diags/LaHw1RHO',
+   frequency(26) = 2628000.,
+   timePhase(26) = 0.0,
+
+   fields(1:1, 27) = 'LaTr1RHO',
+   fileName(27) = 'Diags/LaTr1RHO',
+   frequency(27) = 2628000.,
+   timePhase(27) = 0.0,
+
+
+#   frequency(12) = 26280000.,
+#   fields(1,12) = 'TRAC04  ',
+#   filename(12) = 'Diags/PTR4',
+
+#   frequency(13) = 26280000.,
+#   fields(1,13) = 'TRAC05  ',
+#   filename(13) = 'Diags/PTR5',
+
+#   frequency(14) = 26280000.,
+#   fields(1,14) = 'TRAC06  ',
+#   filename(14) = 'Diags/PTR6',
+
+#   frequency(15) = 26280000.,
+#   fields(1:2,15) = 'ADVx_TH ','ADVy_TH ',
+#   filename(15) = 'trsp3d/ADV_TH',
+
+#   frequency(17) = 26280000.,
+#   fields(1,17) = 'ADVr_TH ',
+#   filename(17) = 'trsp3d/ADVr_TH',
+
+#   frequency(18) = 26280000.,
+#   fields(1:2,18) = 'ADVx_SLT','ADVy_SLT',
+#   filename(18) = 'trsp3d/ADV_SLT',
+
+#   frequency(20) = 26280000.,
+#   fields(1,20) = 'ADVr_SLT',
+#   filename(20) = 'trsp3d/ADVr_SLT',
+
+#   frequency(21) = 26280000.,
+#   fields(1:2,21) = 'DFrI_TH ','KPPg_TH ',
+#   filename(21) = 'trsp3d/DFr_TH',
+
+#   frequency(22) = 26280000.,
+#   fields(1:2,22) = 'DFrI_SLT','KPPg_SLT',
+#   filename(22) = 'trsp3d/DFr_SLT',
+
+#   frequency(23) = 26280000.,
+#   fields(1:2,23) = 'UTRAC01 ','VTRAC01 ',
+#   filename(23) = 'trsp3d/TTRAC1',
+
+#   frequency(24) = 26280000.,
+#   fields(1:2,24) = 'UTRAC02 ','VTRAC02 ',
+#   filename(24) = 'trsp3d/TTRAC2',
+
+#   frequency(25) = 26280000.,
+#   fields(1:2,25) = 'UTRAC03 ','VTRAC03 ',
+#   filename(25) = 'trsp3d/TTRAC3',
+
+#   frequency(26) = 26280000.,
+#   fields(1:2,26) = 'UTRAC04 ','VTRAC04 ',
+#   filename(26) = 'trsp3d/TTRAC4',
+
+#   frequency(27) = 26280000.,
+#   fields(1:2,27) = 'UTRAC05 ','VTRAC05 ',
+#   filename(27) = 'trsp3d/TTRAC5',
+
+#   frequency(28) = 26280000.,
+#   fields(1:2,28) = 'UTRAC06 ','VTRAC06 ',
+#   filename(28) = 'trsp3d/TTRAC6',
+#
+#
+   frequency(28) = 2628000.,
+   fields(1,28) = 'TRAC01  ',
+   filename(28) = 'Diags/PTR1',
+
+   frequency(29) = 2628000.,
+   fields(1:3,29) = 'UTRAC01 ','VTRAC01 ','WTRAC01 ',
+   filename(29) = 'Diags/TR_transp',
+
+   frequency(30) = 2628000.,
+   fields(1:3,30) = 'ForcTr01','AB_gTr01','Tp_gTr01',
+   filename(30) = 'Diags/TR_ten',
+
+   frequency(31) = 2628000.,
+   fields(1:3,31) = 'ADVrTr01','ADVxTr01','ADVyTr01',
+   filename(31) = 'Diags/TR_adv',
+
+   frequency(32) = 2628000.,
+   fields(1:5,32) = 'DFrETr01','DFxETr01','DFyETr01','DFrITr01','KPPgTr01',
+   filename(32) = 'Diags/TR_diffusive',
+
+#   fields(1:1, 33) = 'LaTh1RHO',
+#   fileName(33) = 'Diags/LaTh1RHO',
+#   frequency(33) = 2628000.,
+#   timePhase(33) = 0.0,
+
+#   fields(1:1, 34) = 'LaSh1RHO',
+#   fileName(34) = 'Diags/LaSh1RHO',
+#   frequency(34) = 2628000.,
+#   timePhase(34) = 0.0,
+
+#   frequency(29) = 26280000.,
+#   fields(1:2,29) = 'ADVxTr01','ADVyTr01',
+#   filename(29) = 'trsp3d/ADVTRAC1',
+
+#   frequency(30) = 26280000.,
+#   fields(1:2,30) = 'ADVxTr02','ADVyTr02',
+#   filename(30) = 'trsp3d/ADVTRAC2',
+
+#   frequency(31) = 26280000.,
+#   fields(1:2,31) = 'ADVxTr03','ADVyTr03',
+#   filename(31) = 'trsp3d/ADVTRAC3',
+
+#   frequency(32) = 26280000.,
+#   fields(1:2,32) = 'ADVxTr04','ADVyTr04',
+#   filename(32) = 'trsp3d/ADVTRAC4',
+
+#   frequency(33) = 26280000.,
+#   fields(1:2,33) = 'ADVxTr05','ADVyTr05',
+#   filename(33) = 'trsp3d/ADVTRAC5',
+
+#   frequency(34) = 26280000.,
+#   fields(1:2,34) = 'ADVxTr06','ADVyTr06',
+#   filename(34) = 'trsp3d/ADVTRAC6',
+
+#   frequency(35) = 26280000.,
+#   fields(1:1,35) = 'ADVrTr01',
+#   filename(35) = 'trsp3d/VTRAC1',
+
+#   frequency(36) = 26280000.,
+#   fields(1:1,36) = 'ADVrTr02',
+#   filename(36) = 'trsp3d/VTRAC2',
+
+#   frequency(37) = 26280000.,
+#   fields(1:1,37) = 'ADVrTr03',
+#   filename(37) = 'trsp3d/VTRAC3',
+
+#   frequency(38) = 26280000.,
+#   fields(1:2,38) = 'WTRAC04 ','ADVrTr04',
+#   filename(38) = 'trsp3d/VTRAC4',
+
+#   frequency(39) = 26280000.,
+#   fields(1:1,39) = 'ADVrTr05',
+#   filename(39) = 'trsp3d/VTRAC5',
+
+#   frequency(40) = 26280000.,
+#   fields(1:1,40) = 'ADVrTr06',
+#   filename(40) = 'trsp3d/VTRAC6',
+
+#   frequency(41) = 26280000.,
+#   fields(1:2,41) = 'DFrITr01','KPPgTr01',
+#   filename(41) = 'trsp3d/DFrTRAC1',
+
+#   frequency(42) = 26280000.,
+#   fields(1:2,42) = 'DFrITr02','KPPgTr02',
+#   filename(42) = 'trsp3d/DFrTRAC2',
+
+#   frequency(43) = 26280000.,
+#   fields(1:3,43) = 'DFrITr03','KPPgTr03',
+#   filename(43) = 'trsp3d/DFrTRAC3',
+
+#   frequency(44) = 26280000.,
+#   fields(1:2,44) = 'DFrITr04','KPPgTr04',
+#   filename(44) = 'trsp3d/DFrTRAC4',
+
+#   frequency(45) = 26280000.,
+#   fields(1:2,45) = 'DFrITr05','KPPgTr05',
+#   filename(45) = 'trsp3d/DFrTRAC5',
+
+#   frequency(46) = 26280000.,
+#   fields(1:2,46) = 'DFrITr06','KPPgTr06',
+#   filename(46) = 'trsp3d/DFrTRAC6',
+
+#   frequency(48) = 26280000.,
+#   fields(1:2,48) = 'PhiVEL  ','PsiVEL  ',
+#   filename(48) = 'Diags/PhiPsi',
+
+   fields(1:3,46) = 'ADVx_TH ','ADVy_TH ','ADVr_TH ',
+   fileName(46) = 'Diags/Tadv',
+   frequency(46) = 2628000.,
+   timePhase(46) = 0.0,
+
+   fields(1:2,47) = 'DFrI_TH ','DFrI_SLT',
+   fileName(47) = 'Diags/Trcdff',
+   frequency(47) = 2628000.,
+   timePhase(47) = 0.0,
+
+   fields(1:3,48) = 'TOTTTEND','WTHMASS ','KPPg_TH ',
+   fileName(48) = 'Diags/Ttend',
+   frequency(48) = 2628000.,
+   timePhase(48) = 0.0,
+
+#   frequency(49) = 2628000.,
+#   fields(1,49) = 'RHOAnoma',
+#   filename(49) = 'Diags/RHOAnoma',
+ 
+#   frequency(50) = 26280000.,
+#   fields(1:2,50) = 'momKE   ','momVort3',
+#   filename(50) = 'Diags/mom',
+
+   frequency(50) = 2628000.,
+   fields(1:1,50) = 'KPPghatK',
+   filename(50) = 'Diags/KPPghatK',
+
+   frequency(51) = 2628000.,
+   fields(1:2,51) = 'KPPdiffT','KPPdiffS',
+   filename(51) = 'Diags/KPPdiff',
+
+   frequency(52) = 2628000.,
+   fields(1:2,52) = 'KPPviscA','KPPRi   ',
+   filename(52) = 'Diags/KPP3d',
+
+   frequency(53) = 2628000.,
+   fields(1:4,53) = 'KPPhbl  ','KPPbo   ','KPPbosol','KPPfrac ',
+   filename(53) = 'Diags/KPP2d',
+
+#   frequency(54) = 26280000.,
+#   fields(1:2,54) = 'DICBIOA ','DICCARB ',
+#   filename(54) = 'Diags/DIC3d',
+
+#   frequency(55) = 26280000.,
+#   fields(1:5,55) = 'DICTFLX ','DICOFLX ','DICCFLX ','DICPCO2 ','DICPHAV ',
+#   filename(55) = 'Diags/DIC2d',
+
+   frequency(56) = 2628000.,
+   fields(1:17,56) = 'EXFatemp','EXFaqh  ','EXFlwdn ','EXFswdn ',
+                    'EXFuwind','EXFvwind',
+                    'EXFhs   ','EXFhl   ','EXFlwnet','EXFwspee',
+                    'EXFevap ','EXFpreci','EXFroff ','EXFempmr',
+                    'EXFqnet ','EXFlwnet','EXFswnet',
+   filename(56) = 'Diags/EXFforc',
+
+#   frequency(57) = 26280000.,
+#   fields(1:2,57) = 'WTHMASS ','WSLTMASS',
+#   filename(57) = 'trsp3d/WMASS',
+
+#   frequency(57) = 26280000.,
+#   fields(1:1,57) = 'UDIAG1  ',
+#   filename(57) = 'Diags/GPO4',
+
+#   frequency(58) =  86400.,
+#   filename(58) = 'movie_diags/movie_dic',
+#   fields(1:4,58) = 'DICBIOA ', 'DICPCO2 ', 'DICCFLX ', 'TRAC01  ',
+#   levels(1,58) = 1.,
+ &
+
+# Parameter for Diagnostics of per level statistics:
+#-----------------
+# for each output-stream:
+#  stat_fname(n) : prefix of the output file name (only 8.c long) for
+#outp.stream n
+#  stat_freq(n):< 0 : write snap-shot output every |stat_freq| seconds
+#               > 0 : write time-average output every stat_freq seconds
+#  stat_phase(n)    : write at time = stat_phase + multiple of |stat_freq|
+#  stat_region(:,n) : list of "regions" (default: 1 region only=global)
+#  stat_fields(:,n) : list of diagnostics fields (8.c) (see
+#"available_diagnostics.log"
+#                 file for the list of all available diag. in this particular
+#config)
+#-----------------
+ &DIAG_STATIS_PARMS
+#
+# diagSt_regMaskFile='bulk/mask_persistent_eddy.600x3240_R4.raw',
+# nSetRegMskFile=1,
+# set_regMask(1)= 1,
+# val_regMask(1)= 1.
+#
+     stat_freq(1) = 86400.,
+ stat_fields(1,1) = 'ETAN    ','UVEL    ','VVEL    ','WVEL    ',
+                    'THETA   ','SALT    ','momKE   ','DETADT2 ',
+    stat_fname(1) = 'stats',
+    stat_phase(1) = 0.,
+ &
+

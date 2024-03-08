@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# Build options for PGI compiler with openmpi on ring 
+#
+
+FC=mpif90
+CC=mpicc
+F90C=mpif90
+
+DEFINES='-DALLOW_USE_MPI -DALWAYS_USE_MPI -DWORDLENGTH=4'
+CPP='/lib/cpp  -traditional -P'
+EXTENDED_SRC_FLAG='-132'
+OMPFLAG='-openmp'
+CFLAGS='-fPIC'
+LDADD='-shared-intel'
+
+INCLUDES="-I/$SKRIPS_MPI_DIR/include $SKRIPS_NETCDF_INCLUDE"
+LIBS="-L/$SKRIPS_MPI_DIR/lib $SKRIPS_NETCDF_LIB"
+
+NOOPTFLAGS='-O0 -fPIC'
+
+FFLAGS="-fPIC -convert big_endian -assume byterecl -align"
+
+FOPTIM='-O2'
+FOPTIM="$FOPTIM -ip -fp-model precise -traceback -ftz"
+
+INCLUDEDIRS=''
+INCLUDES=''
+LIBS=''
+
+if [ "x$NETCDF_ROOT" != x ] ; then
+    INCLUDEDIRS="${NETCDF_ROOT}/include"
+    INCLUDES="-I${NETCDF_ROOT}/include"
+    LIBS="-L${NETCDF_ROOT}/lib64 -L${NETCDF_ROOT}/lib"
+elif [ "x$NETCDF_HOME" != x ]; then
+    INCLUDEDIRS="${NETCDF_HOME}/include"
+    INCLUDES="-I${NETCDF_HOME}/include"
+    LIBS="-L${NETCDF_ROOT}/lib64 -L${NETCDF_HOME}/lib"
+elif [ "x$NETCDF_INC" != x -a "x$NETCDF_LIB" != x ]; then
+    NETCDF_INC=`echo $NETCDF_INC | sed 's/-I//g'`
+    NETCDF_LIB=`echo $NETCDF_LIB | sed 's/-L//g'`
+    INCLUDEDIRS="${NETCDF_INC}"
+    INCLUDES="-I${NETCDF_INC}"
+    LIBS="-L${NETCDF_LIB}"
+elif [ "x$NETCDF_INCDIR" != x -a "x$NETCDF_LIBDIR" != x ]; then
+    INCLUDEDIRS="${NETCDF_INCDIR}"
+    INCLUDES="-I${NETCDF_INCDIR}"
+    LIBS="-L${NETCDF_LIBDIR}"
+elif test -d /usr/include/netcdf-3 ; then
+    INCLUDEDIRS='/usr/include/netcdf-3'
+    INCLUDES='-I/usr/include/netcdf-3'
+    LIBS='-L/usr/lib64/netcdf-3 -L/usr/lib/netcdf-3'
+elif test -d /usr/local/pkg/netcdf ; then
+    INCLUDEDIRS='/usr/local/pkg/netcdf/include'
+    INCLUDES='-I/usr/local/pkg/netcdf/include'
+    LIBS='-L/usr/local/pkg-x86_64/netcdf/lib64 -L/usr/local/pkg-x86_64/netcdf/lib -L/usr/local/pkg/netcdf/lib64 -L/usr/local/pkg/netcdf/lib'
+elif test -d /usr/include/netcdf ; then
+    INCLUDEDIRS='/usr/include/netcdf'
+    INCLUDES='-I/usr/include/netcdf'
+elif test -d /usr/local/netcdf ; then
+    INCLUDEDIRS='/usr/include/netcdf/include'
+    INCLUDES='-I/usr/local/netcdf/include'
+    LIBS='-L/usr/local/netcdf/lib64 -L/usr/local/netcdf/lib'
+elif test -f /usr/local/include/netcdf.inc ; then
+    INCLUDEDIRS='/usr/local/include'
+    INCLUDES='-I/usr/local/include'
+    LIBS='-L/usr/local/lib64 -L/usr/local/lib'
+fi
+
+if [ -n "$MPI_INC_DIR" -a "x$MPI" = xtrue ] ; then
+    INCLUDES="$INCLUDES -I$MPI_INC_DIR"
+    INCLUDEDIRS="$INCLUDEDIRS $MPI_INC_DIR"
+    #- used for parallel (MPI) DIVA
+    MPIINCLUDEDIR="$MPI_INC_DIR"
+   #MPI_HEADER_FILES='mpif.h mpiof.h'
+fi
